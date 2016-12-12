@@ -1,0 +1,83 @@
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="tv.danmaku.ijk.media.example.activities.VideoActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/brown"
+        android:layout_weight="1">
+        <net.ossrs.yasea.SrsCameraView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/preview" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/banner_pic"/>
+    </RelativeLayout>
+
+
+
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10">
+
+        <!-- The main content view -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#0099cc">
+
+
+
+            <tv.danmaku.ijk.media.example.widget.media.IjkVideoView
+                android:id="@+id/video_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+            </tv.danmaku.ijk.media.example.widget.media.IjkVideoView>
+
+            <TextView
+                android:id="@+id/toast_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:background="@color/ijk_transparent_dark"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <TableLayout
+                android:id="@+id/hud_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:background="@color/ijk_transparent_dark"
+                android:visibility="gone"
+                android:padding="8dp" />
+
+        </FrameLayout>
+
+        <!-- The navigation drawer -->
+        <FrameLayout android:id="@+id/right_drawer"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@color/ijk_transparent_dark" />
+    </android.support.v4.widget.DrawerLayout>
+
+
+
+
+</LinearLayout>
